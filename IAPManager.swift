@@ -63,7 +63,7 @@ extension IAPManager: SKPaymentTransactionObserver {
     private func fail(transaction: SKPaymentTransaction) {
         if let transactionError = transaction.error as NSError? {
             if transactionError.code != SKError.paymentCancelled.rawValue {
-                print("Ошибка транзакции: \(transactionError.localizedDescription)")
+                print("Transaction error: \(transactionError.localizedDescription)")
             }
         }
         paymentQueue.finishTransaction(transaction)
